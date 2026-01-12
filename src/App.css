@@ -1,0 +1,101 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* Page background */
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main tic tac toe container */
+.Box-container {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 18px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+}
+
+/* Each row */
+.box-row {
+  display: flex;
+}
+
+/* Individual square (Sq component) */
+.box-row > * {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #f7f7f7;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Remove double borders */
+.box-row:not(:last-child) > * {
+  border-bottom: none;
+}
+
+.box-row > *:not(:last-child) {
+  border-right: none;
+}
+
+/* Hover effect */
+.box-row > *:hover {
+  background: #ececec;
+  transform: scale(1.05);
+}
+
+/* X and O styling (use className="x" or "o") */
+.x {
+  color: #e63946;
+}
+
+.o {
+  color: #1d3557;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .box-row > * {
+    width: 80px;
+    height: 80px;
+    font-size: 28px;
+  }
+}
+.Button {
+    background-color: #4CAF50;       /* green background */
+    color: white;                    /* text color */
+    padding: 12px 24px;              /* vertical and horizontal padding */
+    font-size: 18px;                 /* larger font */
+    font-weight: bold;
+    border: none;                    /* remove default border */
+    border-radius: 12px;             /* rounded corners */
+    cursor: pointer;                 /* hand cursor on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);  /* subtle shadow */
+    transition: all 0.3s ease;  
+    margin: 10px;    /* smooth hover effects */
+}
+
+.Button:hover {
+    background-color: #45a049;       /* slightly darker green on hover */
+    transform: translateY(-2px);     /* lift effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* bigger shadow on hover */
+}
+
+.Button:active {
+    transform: translateY(0);        /* reset position when clicked */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);  /* original shadow */
+}
